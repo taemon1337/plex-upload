@@ -1,0 +1,15 @@
+= render :file => File.join("#{Rails.root}/app/assets/templates", "uploader", "uploader-template")
+
+.container
+	%h1 Plex Uploader
+	#application
+
+- content_for :javascripts do
+	:javascript
+		$(function() {
+			plex.start({
+				environment: "#{Rails.env}",
+			});
+		});
+
+
