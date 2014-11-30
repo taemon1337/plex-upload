@@ -1,4 +1,2 @@
 %script(type='text/html' id='uploader-template')
-	%h1 Uploader
-
-	%input(type='file' name='files' data-role='upload' data-bind="visible: isVisible")
+	%input#uploader(type='file' name='files' data-role='upload' data-bind="visible: isVisible" data-async="{ saveUrl: '/upload', removeUrl: '/remove', autoUpload: false }")

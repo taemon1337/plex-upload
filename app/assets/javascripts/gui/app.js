@@ -1,6 +1,7 @@
 window.plex = plex = {
 	components: {},
 	event: $(document.createElement("div")),
+	stack: [],
 }
 
 plex.start = function(options) {

@@ -1,0 +1,12 @@
+%script(type='text/html' id='folders-template')
+	.row
+		%h1 Folders
+
+		.container(data-template='folder-template' data-bind="source: folders")
+
+%script(type='text/html' id='folder-template')
+	.k-block.col-xs-3(style='margin:10px;')
+		.k-header.k-shadow(style='text-align:center;')
+			%span(data-bind="text: label")
+		.k-content
+			%input.uploader(id='uploader-#= name #' type='file' name='files' data-role='upload' data-bind="visible: isVisible" data-async="{ saveUrl: '/upload/#= name #', removeUrl: '/remove', autoUpload: false }")
