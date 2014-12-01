@@ -11,14 +11,6 @@ plex.components.folders = {
 		var view = new kendo.View('folders-template', {
 			model: model,
 			init: function() {
-
-				view.element.find(".uploader").on("click", function() {
-					var uploader = $(this).data("kendoUpload");
-					uploader.on('select', function() {
-						alert('selected');
-					});
-				});
-
 			},
 		});
 
@@ -44,10 +36,6 @@ plex.components.folders = {
 			isVisible: true,
 
 			folders: plex.components.folders.datasource(),
-
-			addFiles: function(e) {
-				alert('adding files');
-			},
 
 		});
 	},

@@ -1,7 +1,7 @@
 class UploadController < ApplicationController
 
 	def create
-		upload = Upload.new(params[:upload])
+		upload = Upload.new({ folder: params[:folder], media: params[:media] })
 
 		if upload.save
 			render json: upload

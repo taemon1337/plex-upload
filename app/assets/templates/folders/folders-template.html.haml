@@ -9,4 +9,4 @@
 		.k-header.k-shadow(style='text-align:center;')
 			%span(data-bind="text: label")
 		.k-content
-			%input.uploader(id='uploader-#= name #' type='file' name='files' data-role='upload' data-bind="visible: isVisible" data-async="{ saveUrl: '/upload/#= name #', removeUrl: '/remove', autoUpload: false }")
+			%input.uploader(id='uploader-#= name #' type='file' name='media' data-role='upload' data-bind="visible: isVisible" data-async="{ saveUrl: '/upload/#= name #', removeUrl: '/remove', autoUpload: false }")
