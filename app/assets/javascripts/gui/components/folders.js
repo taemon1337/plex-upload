@@ -19,15 +19,13 @@ plex.components.folders = {
 
 	datasource: function(options) {
 		return new kendo.data.DataSource({
-			data: [
-				{ label: 'Movies', name: 'movies' },
-				{ label: 'Home Videos', name: 'home_video' },
-				{ label: 'Music Videos', name: 'music_video' },
-				{ label: 'Soccer Videos', name: 'soccer' },
-				{ label: 'Educational', name: 'educational' },
-				{ label: 'Music', name: 'music' },
-				{ label: 'Photos', name: 'photos' },
-			]
+			transport: {
+				read: {
+					url: "/folders",
+					method: "get",
+					dataType: "json",
+				}
+			}
 		});
 	},
 
@@ -36,6 +34,10 @@ plex.components.folders = {
 			isVisible: true,
 
 			folders: plex.components.folders.datasource(),
+
+			openFolder: function(e) {
+				plex.trigger("folder:show", {})
+			},
 
 		});
 	},

@@ -2,7 +2,9 @@
 = render :file => File.join("#{Rails.root}/app/assets/templates", "uploader", "uploader-template")
 
 .container
-	%h1 Plex Uploader
+	%h2
+		Plex Uploader
+		%small - Media files uploaded here will automatically be added to the connected Plex Media Server.
 	#application
 
 - content_for :javascripts do
