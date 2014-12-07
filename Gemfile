@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'carrierwave'
+gem 'gon'
 
 
 # Gems used only for assets and not required

@@ -1,8 +1,7 @@
 PlexUpload::Application.routes.draw do
 
 	post '/upload/:folder' => 'upload#create'
-
-	resources :folders, :only => [:index,:show]
+	get "/plex/*path" => 'folders#show'
 
   root :to => 'pages#home'
 

@@ -6,7 +6,7 @@
 	.k-block.col-xs-3(style='margin:10px;')
 		.k-header.k-shadow(style='text-align:center;')
 			.pull-right
-				%span.glyphicon.glyphicon-pencil(title='open folder' data-target="#= data #" style='cursor:pointer' data-bind="click: openFolder")
-			%span(data-bind="text: data")
+				%span.glyphicon.glyphicon-pencil(title='open folder' data-target="#= data #" style='cursor:pointer' data-bind="")
+			%a(data-bind="click: showFolder, text: label, attr: { href: href }")
 		.k-content
-			%input.uploader(id='uploader-#= data #' type='file' name='media' data-role='upload' data-bind="visible: isVisible" data-async="{ saveUrl: '/upload/#= data #', removeUrl: '/remove', autoUpload: false }")
+			%input.uploader(id='uploader-#= name #' type='file' name='media' data-role='upload' data-bind="visible: isVisible" data-async="{ saveUrl: '/upload/#= name #', removeUrl: '/remove', autoUpload: false }")

@@ -1,12 +1,14 @@
 class FoldersController < ApplicationController
-
-	def index
-		render json: Dir.entries(Plex.root).select { |f| f if f.match(/^[a-z]/i) }
-	end
+	before_filter :get_plex_folder
 
 	def show
-		path = File.join(Plex.root, params[:id])
-		render json: Dir.entries(path).select { |f| f if f.match(/^[a-z]/i) }
+		render json: @folder.show(params)
+	end
+
+	private
+
+	def get_plex_folder
+		@folder = Folder.new
 	end
 
 end
